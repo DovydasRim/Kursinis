@@ -1,2 +1,2 @@
-# Tic Tac Toe Enhanced
-(README turinys kaip buvo sukurtas anksčiau)
+# Tic Tac Toe
+Beta versija

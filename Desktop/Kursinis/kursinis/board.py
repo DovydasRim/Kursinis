@@ -16,18 +16,14 @@ class Board:
         return all(all(cell != "" for cell in row) for row in self.grid)
 
     def check_win(self, symbol):
-        # Horizontal
         for r in range(3):
             if all(self.grid[r][c] == symbol for c in range(3)):
                 return ("horizontal", r)
-        # Vertical
         for c in range(3):
             if all(self.grid[r][c] == symbol for r in range(3)):
                 return ("vertical", c)
-        # Diagonal (top-left to bottom-right)
         if all(self.grid[i][i] == symbol for i in range(3)):
             return ("desc_diagonal",)
-        # Diagonal (bottom-left to top-right)
         if all(self.grid[i][2 - i] == symbol for i in range(3)):
             return ("asc_diagonal",)
         return None

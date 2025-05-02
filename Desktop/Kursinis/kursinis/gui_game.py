@@ -48,6 +48,13 @@ sound_win = pygame.mixer.Sound(resource_path('sounds/win.mp3'))
 sound_draw = pygame.mixer.Sound(resource_path('sounds/draw.mp3'))
 
 class GUIGame:
+
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(GUIGame, cls).__new__(cls)
+        return cls._instance
     def __init__(self, player1, player2, master):
         self.master = master
     
@@ -197,8 +204,7 @@ class GUIGame:
         total_time = int(time.time() - self.start_time)
         root = tk.Tk()
         root.withdraw()
-        messagebox.showinfo("Žaidimo pabaiga", "{} Žaidimas truko {} sek.".format(result_text, total_time)
-)
+        messagebox.showinfo("Žaidimo pabaiga", "{} Žaidimas truko {} sek.".format(result_text, total_time))
         self.master.deiconify()
         self.game_active = False
         pygame.quit()

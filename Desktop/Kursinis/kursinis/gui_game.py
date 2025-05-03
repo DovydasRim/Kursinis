@@ -10,7 +10,6 @@ from kursinis.ai_player import AIPlayer
 from kursinis.player import Player
 from kursinis.file_handler import save_result
 
-# Constants
 WIDTH, HEIGHT = 600, 600
 LINE_WIDTH = 10
 BOARD_ROWS = 3
@@ -21,7 +20,6 @@ CIRCLE_WIDTH = 15
 CROSS_WIDTH = 25
 SPACE = SQUARE_SIZE // 4
 
-# Colors
 BG_COLOR = (28, 170, 156)
 LINE_COLOR = (23, 145, 135)
 CIRCLE_COLOR = (239, 231, 200)
@@ -151,9 +149,7 @@ class GUIGame:
             self.draw_win_line()
             pygame.display.update()
             clock.tick(30)
-
-    
-    
+   
     def make_move(self, row, col):
         if self.board.available_square(row, col):
             self.board.mark_square(row, col, self.current_player.symbol)

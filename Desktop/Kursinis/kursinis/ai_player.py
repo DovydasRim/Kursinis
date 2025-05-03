@@ -1,8 +1,9 @@
 
 import random
 from kursinis.board import Board
+from kursinis.player import Player
 
-class AIPlayer:
+class AIPlayer(Player):
     def __init__(self, symbol, difficulty="easy"):
         self.name = "Kompiuteris"
         self.symbol = symbol
